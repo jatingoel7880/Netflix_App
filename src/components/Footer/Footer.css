@@ -1,0 +1,150 @@
+/* Box Sizing ----------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Color ---------------------------------------------- */
+
+:root {
+  --color-flag: rgb(232, 225, 225);
+  --color-footer: rgba(0, 0, 0, 0.345);
+  --color-footer-bg: #f3f3f3;
+}
+
+/* Text, Tag Style ------------------------------------ */
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+p,
+span {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+
+/* Text Style ----------------------------------------- */
+
+.text-terms {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+/* Support HTML CSS ----------------------------------- */
+
+
+.container {
+  display: grid;
+  max-width: 60rem;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 6px;
+  border: 1px dashed gray;
+  margin-inline: auto;
+}
+
+/* Footer --------------------------------------------- */
+
+.footer {
+  padding: 3rem;
+}
+.footer-container {
+  display: grid;
+  max-width: 50rem;
+  gap: 1.6rem;
+  color: gray;
+  display: flex;
+}
+.footer-black {
+  background-color: black;
+}
+.footer-transparent {
+  background-color: var(--color-footer);
+}
+.footer-gray {
+  background-color: var(--color-footer-bg);
+  border-top: 1px solid var(--color-flag);
+}
+.links {
+  display: flex;
+  line-height: 1.7;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (320px <= width <= 640px) {
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (320px <= width <= 450px) {
+  .footer {
+    padding-inline: 2rem;
+  }
+  .links {
+    display: block;
+    line-height: 2;
+  }
+}
+
+/* Language Option ------------------------------------ */
+
+.language {
+  position: relative;
+}
+.language-select {
+  appearance: none;
+  cursor: pointer;
+  height: 2.4rem;
+  max-width: 12rem;
+  border-radius: 0.2rem;
+  padding-inline: 2.4rem;
+  outline: none;
+  color: gray;
+  background-color: transparent;
+}
+.language-icon {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+.globe {
+  position: absolute;
+  left: 1rem;
+}
+.chevron {
+  position: absolute;
+  left: 10rem;
+}
+
+
+.service-code {
+  background: transparent;
+  border: 1px solid grey;
+  color: grey;
+  font-size: 1.3rem;
+  padding: .5rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .service-code {
+      font-size: 1rem;
+      padding: .3rem .5rem;
+  }
+}

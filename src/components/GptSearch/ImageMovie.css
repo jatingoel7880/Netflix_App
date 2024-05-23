@@ -1,0 +1,26 @@
+.image-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 auto;
+    margin-right: 10px; /* Adjust spacing between slides */
+}
+
+.slide-image {
+    width: 300px; /* Adjust the width of each image */
+    height: 200px; /* Adjust the height of each image */
+}
+
+.load-more-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
