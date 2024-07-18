@@ -89,10 +89,11 @@
 
 <br>
 <br>
+
 - Netflix GPT 
-  - Search Bar
-  - Movie Suggestions
-  - Using Gemini Api for searching the movie
+   - Search Bar
+   - Movie Suggestions
+   - Using Gemini Api for searching the movie
 <br>
 
 <div align="center">
