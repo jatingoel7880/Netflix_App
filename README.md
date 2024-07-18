@@ -17,7 +17,10 @@
 # Features
 - Login/Sign Up
   - Sign In /Sign Up Form 
-  - redirect to Browse Page 
+  - redirect to Browse Page
+
+![Login Page](https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Login.png)
+
 
   
 - Browse (only after authentication)
