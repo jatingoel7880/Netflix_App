@@ -13,16 +13,17 @@
 - Implement Sign in user Api
 - Created Redux Store with user Slice
 
-
 # Features
 - Login/Sign Up
   - Sign In /Sign Up Form 
   - redirect to Browse Page
 
-![Login Page](https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Login.png)
+<div align="center">
+  <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Login.png" alt="Login Page">
+  <br>
+  <b>Login Page</b>
+</div>
 
-
-  
 - Browse (only after authentication)
   - Header
   - Main movie
@@ -30,8 +31,58 @@
     - Movie Title and description 
     - Play Button 
     - Movie Suggestions 
-      - MovieLists 
-      
+    - MovieLists
+
+<div align="center">
+  <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Browse.jpg" alt="Browse Page">
+  <br>
+  <b>Browse Page</b>
+</div>
+
+<div align="center">
+  <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Main.png" alt="Main Page">
+  <br>
+  <b>Main Page</b>
+</div>
+
+  - Movie Component to show the details of the specific movie 
+
+<div align="center">
+  <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Movie.jpg" alt="Movie Page">
+  <br>
+  <b>Movie Page</b>
+</div>
+
+  - Opens the Movie Page when clicked on the play button on the video shown on specific movie
+  - Trailer of the specific movie when hovered on it
+
+<div align="center">
+  <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Play.png" alt="Play Page">
+  <br>
+  <b>Play Page</b>
+</div>
+
+  - Open the specific category movie page when clicked on it. Example:- Now Playing Page, Popular, Similar, Top Rated, Trending, Upcoming and TV list.
+
+<div align="center">
+  <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/NowPlayinh.jpg" alt="NowPlayinh Page">
+  <br>
+  <b>NowPlayinh Page</b>
+</div>
+
 - Netflix GPT 
   - Search Bar
   - Movie Suggestions
+  - Using Gemini Api for searching the movie
+
+<div align="center">
+  <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Gpt.png" alt="Gpt Page">
+  <br>
+  <b>GPT Page</b>
+</div>
+
+<div align="center">
+  <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Gpt1.png" alt="Gpt Page">
+  <br>
+  <b>Movie Suggestion byGPT</b>
+</div>
