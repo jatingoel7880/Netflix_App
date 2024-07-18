@@ -79,7 +79,7 @@
 <br>
 <br>
 
-  - Open the specific category movie page when clicked on it. Example:- Now Playing Page, Popular, Similar, Top Rated, Trending, Upcoming and TV list.
+- Open the specific category movie page when clicked on it. Example:- Now Playing Page, Popular, Similar, Top Rated, Trending, Upcoming and TV list.
 <br>
 <div align="center">
   <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/NowPlayinh.jpg" alt="NowPlayinh Page">
