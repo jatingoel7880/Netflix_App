@@ -54,7 +54,7 @@
 <br>
 <br>
 
-  - Movie Component to show the details of the specific movie 
+- Movie Component to show the details of the specific movie 
 
 <br>
 <br>
@@ -66,10 +66,9 @@
 <br>
 <br>
 
-  - Opens the Movie Page when clicked on the play button on the video shown on specific movie
-  - Trailer of the specific movie when hovered on it
+- Opens the Movie Page when clicked on the play button on the video shown on specific movie
+- Trailer of the specific movie when hovered on it
 
-<br>
 <br>
 <div align="center">
   <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/Play.png" alt="Play Page">
@@ -79,9 +78,8 @@
 
 <br>
 <br>
-  - Open the specific category movie page when clicked on it. Example:- Now Playing Page, Popular, Similar, Top Rated, Trending, Upcoming and TV list.
 
-<br>
+  - Open the specific category movie page when clicked on it. Example:- Now Playing Page, Popular, Similar, Top Rated, Trending, Upcoming and TV list.
 <br>
 <div align="center">
   <img src="https://github.com/jatingoel7880/Netflix_App/blob/master/public/images/NowPlayinh.jpg" alt="NowPlayinh Page">
@@ -95,7 +93,6 @@
   - Search Bar
   - Movie Suggestions
   - Using Gemini Api for searching the movie
-<br>
 <br>
 
 <div align="center">
