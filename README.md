@@ -94,18 +94,18 @@ An AI-enhanced movie streaming interface built using **React**, **Redux**, **Fir
 ## 📦 Project Structure
 
 src/
-├── assets/ # Static files and images
-├── components/ # All reusable components
-│ ├── auth/ # Login, Signup forms
-│ ├── browse/ # Movie lists and dashboard
-│ ├── common/ # Loader, buttons, banners
-│ └── header/ # Navigation and search bar
-├── hooks/ # Custom hooks
-├── pages/ # Main views (Login, Browse, MovieDetails)
-├── store/ # Redux slices and configuration
-├── utils/ # Constants and helper functions
-├── App.js # App configuration and routing
-└── index.js # Root render entry
+├── assets/        # Static files and images
+├── components/    # Reusable UI components
+│   ├── auth/         # Auth forms (Login, Signup)
+│   ├── browse/       # Movie dashboard components
+│   ├── common/       # Loader, buttons, banners
+│   └── header/       # Navbar and search
+├── hooks/         # Custom React hooks
+├── pages/         # Main route views
+├── store/         # Redux slices and configuration
+├── utils/         # Constants and helpers
+├── App.js         # Routing and layout
+└── index.js       # Root render
 
 
 ---
@@ -121,26 +121,26 @@ src/
 
 ### 🧰 Steps
 
-1. **Clone the Repository**
+## 1. **Clone the Repository**
 ```bash
 git clone https://github.com/jatingoel7880/Netflix_App.git
 cd Netflix_App
 
-2. **Install Dependencies**
+## 2. **Install Dependencies**
 npm install
 
-3. **Create .env file**
+3. Create .env file
 REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
 REACT_APP_TMDB_KEY=your_tmdb_key
 REACT_APP_GEMINI_KEY=your_gemini_key
 
-4. **Run Locally**
+4. Run Locally
 npm start
 
-🧠 **Technical Highlights**
+🧠 Technical Highlights
 
-🔄 **Authentication Flow**
+🔄 Authentication Flow
 const userSlice = createSlice({
   name: 'user',
   initialState: null,
@@ -150,7 +150,7 @@ const userSlice = createSlice({
   },
 });
 
-🎬 **Movie Fetching Example**
+🎬 Movie Fetching Example
 const fetchNowPlayingMovies = async () => {
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/now_playing?api_key=${TMDB_KEY}`
@@ -159,7 +159,7 @@ const fetchNowPlayingMovies = async () => {
   dispatch(addNowPlayingMovies(data.results));
 };
 
-🤖 **Gemini API Integration**
+🤖 Gemini API Integration
 const getAIMovieRecommendations = async (query) => {
   const response = await fetchGeminiAPI({
     prompt: `Recommend movies like: ${query}`,
