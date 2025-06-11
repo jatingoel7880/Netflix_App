@@ -107,9 +107,6 @@ src/
 ├── App.js # App configuration and routing
 └── index.js # Root render entry
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -128,32 +125,22 @@ Edit
 ```bash
 git clone https://github.com/jatingoel7880/Netflix_App.git
 cd Netflix_App
-Install Dependencies
 
-bash
-Copy
-Edit
+2. **Install Dependencies**
 npm install
-Create .env file
 
-env
-Copy
-Edit
+3. **Create .env file**
 REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
 REACT_APP_TMDB_KEY=your_tmdb_key
 REACT_APP_GEMINI_KEY=your_gemini_key
-Run Locally
 
-bash
-Copy
-Edit
+4. **Run Locally**
 npm start
-🧠 Technical Highlights
-🔄 Authentication Flow
-javascript
-Copy
-Edit
+
+🧠 **Technical Highlights**
+
+🔄 **Authentication Flow**
 const userSlice = createSlice({
   name: 'user',
   initialState: null,
@@ -162,10 +149,8 @@ const userSlice = createSlice({
     removeUser: () => null,
   },
 });
-🎬 Movie Fetching Example
-javascript
-Copy
-Edit
+
+🎬 **Movie Fetching Example**
 const fetchNowPlayingMovies = async () => {
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/now_playing?api_key=${TMDB_KEY}`
@@ -173,33 +158,19 @@ const fetchNowPlayingMovies = async () => {
   const data = await response.json();
   dispatch(addNowPlayingMovies(data.results));
 };
-🤖 Gemini API Integration
-javascript
-Copy
-Edit
+
+🤖 **Gemini API Integration**
 const getAIMovieRecommendations = async (query) => {
   const response = await fetchGeminiAPI({
     prompt: `Recommend movies like: ${query}`,
   });
   return processAIData(response);
 };
-📸 Screenshots
-Authentication	Browse Page
+
 	
-
-Movie Detail Page	AI Search
-	
-
-📜 License
-This project is licensed under the MIT License.
-See the LICENSE file for details.
-
 📧 Contact
 Name: Jatin Goel
-
 Email: jating.0311@gmail.com
-
 GitHub: @jatingoel7880
-
 Project Link: Netflix GPT Repo
 
