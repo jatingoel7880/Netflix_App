@@ -120,13 +120,13 @@ src/
 - Gemini API Key
 
 ### 🧰 Steps
-
-## 1. **Clone the Repository**
+ 
+1. Clone the Repository
 ```bash
 git clone https://github.com/jatingoel7880/Netflix_App.git
 cd Netflix_App
 
-## 2. **Install Dependencies**
+2. Install Dependencies
 npm install
 
 3. Create .env file
@@ -138,7 +138,9 @@ REACT_APP_GEMINI_KEY=your_gemini_key
 4. Run Locally
 npm start
 
-🧠 Technical Highlights
+---
+
+## 🧠 Technical Highlights
 
 🔄 Authentication Flow
 const userSlice = createSlice({
@@ -172,5 +174,4 @@ const getAIMovieRecommendations = async (query) => {
 Name: Jatin Goel
 Email: jating.0311@gmail.com
 GitHub: @jatingoel7880
-Project Link: Netflix GPT Repo
 
