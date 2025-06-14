@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 const Card = ({ id }) => {
   const cardTrailer = useSelector((store) => store.card?.cardTrailer);
   useVideoCard(id);
-
   const navigate = useNavigate();
 
   return (

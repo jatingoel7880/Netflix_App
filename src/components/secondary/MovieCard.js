@@ -23,24 +23,26 @@ const MovieCard = ({ posterPath, movieId }) => {
 
   return (
     <div
-    className="relative w-[300px] h-[180px] pr-4"
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
-  >
-    <Link to={`/play/${movieId}`} className="block w-full h-full">
-      <img
-        className="w-full h-full object-fill transition rounded-md duration-300"
-        alt="Movie Image"
-        src={IMG_CDN_URL + posterPath}
-      />
-    </Link>
-      {/* This is the hover card */}
+      className="relative w-[200px] h-[100%] pr-4"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <Link to={`/play/${movieId}`} className="block w-full h-full">
+        <div className="w-full h-full overflow-hidden rounded-md">
+          <img
+            className="w-full h-full object-cover transition duration-300 hover:scale-105"
+            alt="Movie Poster"
+            src={IMG_CDN_URL + posterPath}
+            loading="lazy"
+          />
+        </div>
+      </Link>
       {hovered && (
-           <div className=" absolute top-0 left-0 w-auto h-auto z-20 ">
-          <Card id={movieId}/>
+        <div className="absolute top-0 left-0 w-auto h-auto z-20">
+          <Card id={movieId} />
         </div>
       )}
-  </div>
+    </div>
   );
 };
 

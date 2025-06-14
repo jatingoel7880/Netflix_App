@@ -12,17 +12,15 @@ const MovieList = lazy(() => import("./MovieList"));
 
 const SecondaryContainer = () => {
   const movies = useSelector((store) => store.movies);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   // const { loading, loadMoreMovies } = usePopularMovies();
   const [mainContainerLoaded, setMainContainerLoaded] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-
   useEffect(() => {
-    // Simulate main container loading
     const timer = setTimeout(() => {
       setMainContainerLoaded(true);
-    }, 2000); // Adjust this delay according to your actual loading time or use a proper loading indication from your main container
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -32,91 +30,73 @@ const SecondaryContainer = () => {
     navigate(`/category/${category}`);
   };
 
+  const renderLoadingSkeleton = () => (
+    <div className="animate-pulse space-y-8">
+      {[1, 2, 3, 4, 5].map((index) => (
+        <div key={index} className="mb-8">
+          <div className="h-8 w-48 bg-gray-700/50 rounded-lg mb-4"></div>
+          <div className="flex gap-4 overflow-hidden">
+            {[1, 2, 3, 4, 5].map((card) => (
+              <div key={card} className="w-[300px] h-[180px] bg-gray-700/50 rounded-md"></div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const renderCategoryTitle = (title, category) => (
+    <div className="flex items-center group cursor-pointer" onClick={() => handleCategoryClick(category)}>
+      <span className="text-2xl font-bold text-white group-hover:text-red-500 transition-colors duration-300">
+        {title}
+      </span>
+      <FontAwesomeIcon 
+        icon={faChevronRight} 
+        className="ml-3 text-lg transition-all duration-300 group-hover:scale-125 group-hover:text-red-500" 
+      />
+    </div>
+  );
+
   return (
-    <div className="bg-[#141414]">
+    <div className="bg-[#141414] min-h-screen">
       <div className="pl-12 relative">
-        {/* Only render SecondaryContainer if MainContainer is loaded */}
-        {mainContainerLoaded && (
-          <Suspense fallback={null}>
+        {mainContainerLoaded ? (
+          <Suspense fallback={renderLoadingSkeleton()}>
             {selectedCategory ? (
               <MovieCategoryPage category={selectedCategory} />
             ) : (
-              <>
-            {/* <MovieList
-              title={"Now Playing"}
-              movies={movies.nowPlayingMovies}
-            /> */}
-            <MovieList
-              title={
-                <>
-                  <span> Now Playing</span>
-                  &nbsp;&nbsp; {/* Add non-breaking space for spacing */}
-                <FontAwesomeIcon icon={faChevronRight} className="transition-transform hover:scale-150" 
-                //  onClick={()=>navigate("/now-playing")}
-                onClick={() => handleCategoryClick("now_playing")}/>
+              <div className="space-y-12 py-8">
+                <MovieList
+                  title={renderCategoryTitle("Now Playing", "now_playing")}
+                  movies={movies.nowPlayingMovies}
+                />
                 
-                </>
-              }
-              movies={movies.nowPlayingMovies}
-              
-            />
-            
-            <MovieList  title={
-                <>
-                  <span>Trending Movies</span>
-                  &nbsp;&nbsp; 
-                  <FontAwesomeIcon icon={faChevronRight} className="transition-transform hover:scale-150" 
-                    // onClick={()=>navigate("/trending-movies")}
-                    onClick={() => handleCategoryClick("trending")}
-                   />
-                  
-                </>
-              } movies={movies.trendingMovies} />
+                <MovieList
+                  title={renderCategoryTitle("Trending Movies", "trending")}
+                  movies={movies.trendingMovies}
+                />
 
+                <MovieList
+                  title={renderCategoryTitle("Popular Movies", "popular")}
+                  movies={movies.popularMovies}
+                />
 
-            <MovieList
-           title={
-                <>
-                  <span>Popular Movie</span>
-                  &nbsp;&nbsp; 
-                  <FontAwesomeIcon icon={faChevronRight} className="transition-transform hover:scale-150"
-                  // onClick={()=>navigate("/popular-movies")} 
-                  onClick={() => handleCategoryClick("popular")}
-                  />
-                </>
-              }
-              movies={movies.popularMovies}
-              // onLoadMore={loadMoreMovies}
-            />
+                <MovieList
+                  title={renderCategoryTitle("Upcoming Movies", "upcoming")}
+                  movies={movies.upcomingMovies}
+                />
 
-            <MovieList  title={
-                <>
-                  <span>Upcoming Movie</span>
-                  &nbsp;&nbsp; 
-                  <FontAwesomeIcon icon={faChevronRight} className="transition-transform hover:scale-150"
-                //  onClick={() => navigate("/upcoming-movies")}
-                 onClick={() => handleCategoryClick("upcoming")}
-                 />
-                </>
-              } movies={movies.upcomingMovies} />
-
-            <MovieList  title={
-                <>
-                  <span>Top Rated Movie</span>
-                  &nbsp;&nbsp; 
-                  <FontAwesomeIcon icon={faChevronRight} className="transition-transform hover:scale-150"
-                    // onClick={()=>navigate("/topRated-movie")} 
-                    onClick={() => handleCategoryClick("top_rated")}
-                    />       
-
-                </>
-              } movies={movies.topRatedMovies} />
-            {/* <MovieList title={"TV List"} movies={movies.tvSeriesPopularList} /> */}
-            <Footer />
-          
-            </>
-        )}
-        </Suspense>
+                <MovieList
+                  title={renderCategoryTitle("Top Rated Movies", "top_rated")}
+                  movies={movies.topRatedMovies}
+                />
+                
+                <Footer />
+              </div>
+            )}
+          </Suspense>
+        ) : (
+          renderLoadingSkeleton()
         )}
       </div>
     </div>
