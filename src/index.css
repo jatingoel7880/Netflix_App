@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Assuming you have a CSS file for styling */
+/* Hide horizontal scrollbar */
+/* .scroll_func::-webkit-scrollbar {
+    display: none;
+  }
+   */
+
+  

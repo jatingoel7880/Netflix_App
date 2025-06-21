@@ -1,0 +1,49 @@
+/* Card container for the image slider */
+.image-slider-container {
+    background: rgba(0,0,0,0.6);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.image-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 auto;
+    margin-right: 16px;
+}
+
+.slide-image {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+.slide-image:hover {
+    transform: scale(1.05);
+}
+
+.load-more-button {
+    display: block;
+    margin: 1rem auto 0 auto;
+    padding: 0.5rem 2rem;
+    background: linear-gradient(90deg, #ef4444, #3b82f6);
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.load-more-button:hover {
+    transform: scale(1.05);
+}
