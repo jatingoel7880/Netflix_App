@@ -125,7 +125,7 @@ const Login = () => {
       <div className="flex items-center justify-center min-h-screen">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="relative z-10 w-full max-w-md mx-auto p-10 bg-black bg-opacity-85 rounded-xl shadow-2xl flex flex-col gap-4 animate-fade-in"
+          className="relative z-10 w-full max-w-sm mx-auto p-6 bg-black bg-opacity-85 rounded-xl shadow-2xl flex flex-col gap-4 animate-fade-in"
           style={{ boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)" }}
         >
           <h1 
